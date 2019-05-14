@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FXML.RegistrarProyectoController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="1366.0" />
+    <Label layoutX="479.0" layoutY="7.0" prefHeight="35.0" prefWidth="252.0" text="Registrar Proyectos">
+      <font>
+        <Font name="System Bold" size="26.0" />
+      </font>
+    </Label>
+    <TableView layoutX="250.0" layoutY="199.0" onMouseClicked="#clicItem" prefHeight="388.0" prefWidth="710.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="765.0" text="Nombre del proyecto" fx:id="dependenciasTV" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="456.0" text="Dependencia" />
+      </columns>
+    </TableView>
+    <Button layoutX="832.0" layoutY="687.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="337.0" text="Registrar dependencia">
+      <font>
+        <Font name="System Bold" size="18.0" />
+      </font>
+    </Button>
+  </children>
+</AnchorPane>
