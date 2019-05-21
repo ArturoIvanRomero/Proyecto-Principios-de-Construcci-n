@@ -11,21 +11,31 @@
 <AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FXML.ConsultarProyectoController">
   <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="1366.0" />
-    <Label layoutX="557.0" layoutY="7.0" prefHeight="35.0" prefWidth="252.0" text="Consultar Proyectos">
+    <Label layoutX="551.0" layoutY="10.0" prefHeight="34.999900000002526" prefWidth="264.0" text="Consultar Proyectos">
       <font>
         <Font name="System Bold" size="26.0" />
       </font>
     </Label>
-    <TableView layoutX="41.0" layoutY="84.0" prefHeight="529.0" prefWidth="1222.0000999999975">
+    <TableView fx:id="proyectosTV" layoutX="72.0" layoutY="204.0" prefHeight="529.0" prefWidth="1222.0000999999975">
       <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="765.0" text="Nombre del proyecto" />
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="456.0" text="Dependencia" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="765.0" text="Nombre del proyecto" fx:id="nombreProyectoTC" />
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="456.0" text="Dependencia" fx:id="dependenciaTC" />
       </columns>
     </TableView>
-    <Button layoutX="893.0" layoutY="667.0" mnemonicParsing="false" onAction="#registrarProyecto" prefHeight="35.0" prefWidth="371.0" text="Registrar Proyecto">
+    <Button fx:id="registrarBT" layoutX="1061.0" layoutY="108.0" mnemonicParsing="false" onAction="#registrarProyecto" prefHeight="35.0" prefWidth="234.0" text="Registrar Proyecto">
       <font>
         <Font name="System Bold" size="18.0" fx:id="x1" />
       </font>
     </Button>
+    <MenuBar layoutX="14.0" layoutY="15.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Menú">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Proyectos" />
+            <MenuItem mnemonicParsing="false" onAction="#irADocumentos" text="Documentos" fx:id="documentosMI" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
   </children>
 </AnchorPane>

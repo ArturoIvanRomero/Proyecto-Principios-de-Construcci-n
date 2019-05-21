@@ -13,6 +13,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
@@ -27,6 +31,17 @@ public class ConsultarProyectoController implements Initializable {
 
     @FXML
     private Font x1;
+    @FXML
+    private TableView<?> proyectosTV;
+    @FXML
+    private TableColumn<?, ?> dependenciaTC;
+    @FXML
+    private Button registrarBT;
+    @FXML
+    private MenuItem documentosMI;
+    private ServicioSocial servicioSocial;
+    @FXML
+    private TableColumn<?, ?> nombreProyectoTC;
 
     /**
      * Initializes the controller class.
@@ -50,6 +65,14 @@ public class ConsultarProyectoController implements Initializable {
         stage2.alwaysOnTopProperty();
         stage2.initModality(Modality.APPLICATION_MODAL);
         stage2.show();
+    }
+
+    void setServicioSocial(ServicioSocial servicioSocial) {
+        this.servicioSocial=servicioSocial;
+    }
+
+    @FXML
+    private void irADocumentos(ActionEvent event) {
     }
     
 }
