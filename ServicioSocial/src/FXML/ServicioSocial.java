@@ -39,9 +39,9 @@ public class ServicioSocial extends Application {
 
     private void consultarProyectos() throws IOException {
         
-        FXMLLoader loader=new FXMLLoader(ServicioSocial.class.getResource("ConsultarProyecto.fxml"));
+        FXMLLoader loader=new FXMLLoader(ServicioSocial.class.getResource("ConsultarProyectos.fxml"));
         AnchorPane root=(AnchorPane)loader.load();
-        ConsultarProyectoController proyectosController=(ConsultarProyectoController)loader.getController();
+        ConsultarProyectosController proyectosController=(ConsultarProyectosController)loader.getController();
         proyectosController.setServicioSocial(this);
         Scene scene=new Scene(root);
         stage.setScene(scene);

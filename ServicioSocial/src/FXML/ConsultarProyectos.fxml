@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FXML.ConsultarProyectoController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="FXML.ConsultarProyectosController">
   <children>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="1366.0" />
     <Label layoutX="551.0" layoutY="10.0" prefHeight="34.999900000002526" prefWidth="264.0" text="Consultar Proyectos">
