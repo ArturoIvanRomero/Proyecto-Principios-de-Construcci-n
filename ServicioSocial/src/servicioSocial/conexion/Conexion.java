@@ -17,23 +17,18 @@ public class Conexion{
           host = "localhost";
           db = "serviciosocial";
           username = "root";
-          password = "asdfghj";
-          try {
-               Class.forName("com.mysql.jdbc.Driver").newInstance();
-               //Intentamos conectarnos a la base de Datos 
-               System.out.println("Conectando a la base...");
-               String url = "jdbc:mysql://" + host + "/" + db + "?useUnicode=true&useJDBCCompliantTimezoneShift"
-                       + "=true&useLegacyDatetimeCode=false&serverTimezone=UTC";            
-               conn = DriverManager.getConnection(url, username, password);
-               System.out.println("Conexion a BD establecida");
-          } catch (SQLException ex) {
-               System.out.println("Error de mysql" + ex);
-          } catch (ClassNotFoundException e) {
-               e.printStackTrace();
-          } catch (Exception e) {
-               System.out.println("Se produjo un error inesperado: " + e.getMessage());
-
-          }
+          password = "123456";
+       try {
+         Class.forName("com.mysql.jdbc.Driver").newInstance();
+         String url = "jdbc:mysql://" + host + "/" + db;
+         conn = DriverManager.getConnection(url, username, password);
+       } catch (SQLException ex) {
+         System.out.println("Error de mysql");
+       } catch (ClassNotFoundException e) {
+         e.printStackTrace();
+       } catch (Exception e) {
+         System.out.println("Se produjo un error inesperado: " + e.getMessage());
+       }
           conexion = this;
      }
 
