@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.SubirDocumentoController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="76.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+    <Label layoutX="197.0" layoutY="21.0" text="Subir documento">
+      <font>
+        <Font name="System Bold" size="25.0" />
+      </font>
+    </Label>
+    <Button fx:id="aceptarBT" layoutX="413.0" layoutY="236.0" mnemonicParsing="false" onAction="#aceptar" text="Aceptar">
+      <font>
+        <Font name="System Bold" size="18.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button id="CancelarBT" fx:id="cancelarBT" font="$x1" layoutX="94.0" layoutY="236.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+    <Button id="aceptarBT" fx:id="subirArchivoBT" font="$x1" layoutX="229.0" layoutY="105.0" mnemonicParsing="false" onAction="#subirArchivo" text="Subir archivo" />
+    <Label fx:id="archivoLB" layoutX="288.0" layoutY="184.0" prefWidth="25.0" text="" />
+  </children>
+</AnchorPane>
