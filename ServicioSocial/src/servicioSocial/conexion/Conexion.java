@@ -17,7 +17,7 @@ public class Conexion{
           host = "localhost";
           db = "serviciosocial";
           username = "root";
-          password = "xdxdx";
+          password = "asdfghj";
           try {
                Class.forName("com.mysql.jdbc.Driver").newInstance();
                //Intentamos conectarnos a la base de Datos 
