@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.21, for Win64 (x86)
 --
 -- Host: localhost    Database: serviciosocial
 -- ------------------------------------------------------
--- Server version	8.0.11
+-- Server version	5.5.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8mb4 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `alumno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alumno` (
   `matricula` varchar(9) NOT NULL,
   `nombre` varchar(45) NOT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `dependencia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dependencia` (
   `idDependencia` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `dependencia` (
 
 LOCK TABLES `dependencia` WRITE;
 /*!40000 ALTER TABLE `dependencia` DISABLE KEYS */;
-INSERT INTO `dependencia` VALUES (1,'Facultad de Estadística e Informática','Av. Xalapa S/N','Xalapa','Veracruz','2228421700','gcontreras@uv.mx'),(2,'Centro de Investigación en Inteligencia Artificial','Sebastian Camacho No. 5','Xalapa','Veracruz','2281020304','cenia@gmail.com');
+INSERT INTO `dependencia` VALUES (1,'Facultad de Estadística e Informática','Av. Xalapa S/N','Xalapa','Veracruz','2228421700','gcontreras@uv.mx'),(2,'Centro de Investigación en Inteligencia Artificial','Sebastián Camacho No. 5','Xalapa','Veracruz','2281020304','cenia@gmail.com');
 /*!40000 ALTER TABLE `dependencia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,17 +79,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `documentoalumno`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `documentoalumno` (
   `idDocumentoAlumno` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `ruta` varchar(200) NOT NULL,
-  `Inscripcion_idInscripcion` int(11) NOT NULL,
+  `idInscripcion` int(11) NOT NULL,
   PRIMARY KEY (`idDocumentoAlumno`),
   UNIQUE KEY `iddocumentoAlumno_UNIQUE` (`idDocumentoAlumno`),
-  KEY `fk_DocumentoAlumno_Inscripcion1_idx` (`Inscripcion_idInscripcion`),
-  CONSTRAINT `fk_DocumentoAlumno_Inscripcion1` FOREIGN KEY (`Inscripcion_idInscripcion`) REFERENCES `inscripcion` (`idinscripcion`)
+  KEY `fk_DocumentoAlumno_Inscripcion1_idx` (`idInscripcion`),
+  CONSTRAINT `fk_DocumentoAlumno_Inscripcion1` FOREIGN KEY (`idInscripcion`) REFERENCES `inscripcion` (`idInscripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,21 +108,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `documentoserviciosocial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `documentoserviciosocial` (
   `idDocumentoServicioSocial` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
   `tipo` varchar(20) NOT NULL,
   `ruta` varchar(200) NOT NULL,
   `estado` varchar(10) NOT NULL,
-  `Inscripcion_idInscripcion` int(11) NOT NULL,
-  `Inscripcion_idInscripcion1` int(11) NOT NULL,
+  `idInscripcion` int(11) NOT NULL,
   PRIMARY KEY (`idDocumentoServicioSocial`),
   UNIQUE KEY `idDocumentoServicioSocial_UNIQUE` (`idDocumentoServicioSocial`),
-  KEY `fk_DocumentoServicioSocial_Inscripcion1_idx` (`Inscripcion_idInscripcion`),
-  KEY `fk_DocumentoServicioSocial_Inscripcion2_idx` (`Inscripcion_idInscripcion1`),
-  CONSTRAINT `fk_DocumentoServicioSocial_Inscripcion1` FOREIGN KEY (`Inscripcion_idInscripcion`) REFERENCES `inscripcion` (`idinscripcion`),
-  CONSTRAINT `fk_DocumentoServicioSocial_Inscripcion2` FOREIGN KEY (`Inscripcion_idInscripcion1`) REFERENCES `inscripcion` (`idinscripcion`)
+  KEY `fk_DocumentoServicioSocial_Inscripcion1_idx` (`idInscripcion`),
+  CONSTRAINT `fk_DocumentoServicioSocial_Inscripcion1` FOREIGN KEY (`idInscripcion`) REFERENCES `inscripcion` (`idInscripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,7 +138,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `experienciaeducativa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `experienciaeducativa` (
   `idExperienciaEducativa` int(11) NOT NULL AUTO_INCREMENT,
   `bloque` int(11) NOT NULL,
@@ -169,16 +166,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `horario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `horario` (
   `idHorario` int(11) NOT NULL AUTO_INCREMENT,
   `dia` varchar(9) NOT NULL,
   `horario` varchar(11) NOT NULL,
-  `PlanActividades_idPlanActividades` int(11) NOT NULL,
+  `idPlanActividades` int(11) NOT NULL,
   PRIMARY KEY (`idHorario`),
   UNIQUE KEY `idHorario_UNIQUE` (`idHorario`),
-  KEY `fk_Horario_PlanActividades1_idx` (`PlanActividades_idPlanActividades`),
-  CONSTRAINT `fk_Horario_PlanActividades1` FOREIGN KEY (`PlanActividades_idPlanActividades`) REFERENCES `planactividades` (`idplanactividades`)
+  KEY `fk_Horario_PlanActividades1_idx` (`idPlanActividades`),
+  CONSTRAINT `fk_Horario_PlanActividades1` FOREIGN KEY (`idPlanActividades`) REFERENCES `planactividades` (`idPlanActividades`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -188,7 +185,7 @@ CREATE TABLE `horario` (
 
 LOCK TABLES `horario` WRITE;
 /*!40000 ALTER TABLE `horario` DISABLE KEYS */;
-INSERT INTO `horario` VALUES (1,'Lunes','9:00-13:00',1),(2,'Martes','7:00-11:00',1),(3,'Miércoles','10:00-13:00',1),(4,'Jueves','7:00-11:00',1),(5,'Viernes','7:00-10:00',1),(6,'Sábado','9:00-13:00',1),(7,'Lunes','7:00-11:00',2),(8,'Martes','7:00-11:00',2),(9,'Miércoles','7:00-11:00',2),(10,'Jueves','7:00-11:00',2),(11,'Viernes','7:00-11:00',2);
+INSERT INTO `horario` VALUES (1,'Lunes','09:00-13:00',1),(2,'Martes','07:00-11:00',1),(3,'Miércoles','10:00-13:00',1),(4,'Jueves','07:00-11:00',1),(5,'Viernes','07:00-10:00',1),(6,'Sábado','09:00-13:00',1),(7,'Lunes','07:00-11:00',2),(8,'Martes','07:00-11:00',2),(9,'Miércoles','07:00-11:00',2),(10,'Jueves','07:00-11:00',2),(11,'Viernes','07:00-11:00',2);
 /*!40000 ALTER TABLE `horario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,21 +195,24 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `inscripcion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inscripcion` (
   `idInscripcion` int(11) NOT NULL AUTO_INCREMENT,
-  `matricula` varchar(9) NOT NULL,
-  `idExperienciaEducativa` int(11) NOT NULL,
   `numInscripcion` int(11) NOT NULL,
   `estado` varchar(9) NOT NULL,
   `horasRealizado` int(11) NOT NULL,
+  `matricula` varchar(9) NOT NULL,
+  `idExperienciaEducativa` int(11) NOT NULL,
+  `idPlanActividades` int(11) DEFAULT NULL,
   PRIMARY KEY (`idInscripcion`),
   UNIQUE KEY `idInscripcion_UNIQUE` (`idInscripcion`),
   KEY `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1_idx` (`idExperienciaEducativa`),
   KEY `fk_Alumno_has_ExperienciaEducativa_Alumno1_idx` (`matricula`),
+  KEY `fkidPlanActividades_idx` (`idPlanActividades`),
+  CONSTRAINT `restPlanActividadesInscripcion` FOREIGN KEY (`idPlanActividades`) REFERENCES `planactividades` (`idPlanActividades`),
   CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_Alumno1` FOREIGN KEY (`matricula`) REFERENCES `alumno` (`matricula`),
-  CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1` FOREIGN KEY (`idExperienciaEducativa`) REFERENCES `experienciaeducativa` (`idexperienciaeducativa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1` FOREIGN KEY (`idExperienciaEducativa`) REFERENCES `experienciaeducativa` (`idExperienciaEducativa`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,6 +221,7 @@ CREATE TABLE `inscripcion` (
 
 LOCK TABLES `inscripcion` WRITE;
 /*!40000 ALTER TABLE `inscripcion` DISABLE KEYS */;
+INSERT INTO `inscripcion` VALUES (1,1,'En curso',0,'S17012932',1,1),(2,1,'En curso',0,'S17012935',1,2),(3,1,'En curso',0,'S17012993',1,NULL);
 /*!40000 ALTER TABLE `inscripcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,20 +231,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `planactividades`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `planactividades` (
   `idPlanActividades` int(11) NOT NULL AUTO_INCREMENT,
   `nombreProyecto` varchar(60) NOT NULL,
   `descripcion` varchar(400) NOT NULL,
   `actividades` varchar(300) NOT NULL,
-  `Dependencia_idDependencia` int(11) NOT NULL,
-  `ResponsableProyecto_idResponsableProyecto` int(11) NOT NULL,
+  `idDependencia` int(11) NOT NULL,
+  `idResponsableProyecto` int(11) NOT NULL,
   PRIMARY KEY (`idPlanActividades`),
   UNIQUE KEY `idplanActividades_UNIQUE` (`idPlanActividades`),
-  KEY `fk_PlanActividades_Dependencia_idx` (`Dependencia_idDependencia`),
-  KEY `fk_PlanActividades_ResponsableProyecto1_idx` (`ResponsableProyecto_idResponsableProyecto`),
-  CONSTRAINT `fk_PlanActividades_Dependencia` FOREIGN KEY (`Dependencia_idDependencia`) REFERENCES `dependencia` (`iddependencia`),
-  CONSTRAINT `fk_PlanActividades_ResponsableProyecto1` FOREIGN KEY (`ResponsableProyecto_idResponsableProyecto`) REFERENCES `responsableproyecto` (`idresponsableproyecto`)
+  KEY `fk_PlanActividades_Dependencia_idx` (`idDependencia`),
+  KEY `fk_PlanActividades_ResponsableProyecto1_idx` (`idResponsableProyecto`),
+  CONSTRAINT `fk_PlanActividades_Dependencia` FOREIGN KEY (`idDependencia`) REFERENCES `dependencia` (`idDependencia`),
+  CONSTRAINT `fk_PlanActividades_ResponsableProyecto1` FOREIGN KEY (`idResponsableProyecto`) REFERENCES `responsableproyecto` (`idResponsableProyecto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -253,7 +254,7 @@ CREATE TABLE `planactividades` (
 
 LOCK TABLES `planactividades` WRITE;
 /*!40000 ALTER TABLE `planactividades` DISABLE KEYS */;
-INSERT INTO `planactividades` VALUES (1,'Enseñanza de Programación para niños','La enseñanza de la programacion fomenta el razonamiento estructural  de la mente y ayuda a ordenar ideas, esto conlleva beneficios a toda persona y aún mas en los niños.','Desarrollo del programa de capacitacion,',1,1),(2,'Traducción de documentos','la tarduccion e documentos facilita el aprendizaje de las personas ya que les permite consultar fuentes en otros idiomas','Desarrollo de software para traducción de documentos',2,2);
+INSERT INTO `planactividades` VALUES (1,'Enseñanza de Programación para niños','La enseñanza de la programación fomenta el razonamiento estructural  de la mente y ayuda a ordenar ideas, esto conlleva beneficios a toda persona y aún mas en los niños. ','Desarrollo del programa de capacitación.',1,1),(2,'Traducción de documentos','La tarducción de documentos facilita el aprendizaje de las personas ya que les permite consultar fuentes en otros idiomas.','Desarrollo de software para traducción de documentos.',2,2);
 /*!40000 ALTER TABLE `planactividades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -263,7 +264,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `reporte`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
@@ -272,11 +273,11 @@ CREATE TABLE `reporte` (
   `estado` varchar(10) NOT NULL,
   `horasRealizadas` int(11) NOT NULL,
   `mes` varchar(10) NOT NULL,
-  `Inscripcion_idInscripcion` int(11) NOT NULL,
+  `idInscripcion` int(11) NOT NULL,
   PRIMARY KEY (`idReporte`),
   UNIQUE KEY `idReporte_UNIQUE` (`idReporte`),
-  KEY `fk_Reporte_Inscripcion1_idx` (`Inscripcion_idInscripcion`),
-  CONSTRAINT `fk_Reporte_Inscripcion1` FOREIGN KEY (`Inscripcion_idInscripcion`) REFERENCES `inscripcion` (`idinscripcion`)
+  KEY `fk_Reporte_Inscripcion1_idx` (`idInscripcion`),
+  CONSTRAINT `fk_Reporte_Inscripcion1` FOREIGN KEY (`idInscripcion`) REFERENCES `inscripcion` (`idInscripcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -295,7 +296,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `responsableproyecto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `responsableproyecto` (
   `idResponsableProyecto` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
@@ -312,7 +313,7 @@ CREATE TABLE `responsableproyecto` (
 
 LOCK TABLES `responsableproyecto` WRITE;
 /*!40000 ALTER TABLE `responsableproyecto` DISABLE KEYS */;
-INSERT INTO `responsableproyecto` VALUES (1,'Conteras Vega Gerardo','Coordinador Laboratorio de Redes','gcontreras@uv.mx'),(2,'Acosta Mesa Héctor Gabriel ','Responsable Laboratorio IA','hacosta@outlook.com');
+INSERT INTO `responsableproyecto` VALUES (1,'Conteras Vega Gerardo','Coordinador Laboratorio de Redes','gcontreras@uv.mx'),(2,'Acosta Mesa Héctor Gabriel','Responsable Laboratorio IA','hacosta@outlook.com');
 /*!40000 ALTER TABLE `responsableproyecto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,7 +323,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
   `usuario` varchar(10) NOT NULL,
   `contrasenia` varchar(15) NOT NULL,
@@ -337,6 +338,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('CO-IS','coordinador'),('TA-IS','auxiliar');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -349,4 +351,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-06 12:43:00
+-- Dump completed on 2019-06-07 16:05:54
