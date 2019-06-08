@@ -8,55 +8,67 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.DocumentosYReportesController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1350.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.DocumentosYReportesController">
   <children>
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dfdfdf" height="356.0" layoutX="144.0" layoutY="333.0" stroke="BLACK" strokeType="INSIDE" width="352.0000999999975" />
-    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="64.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="1366.0" />
-    <Label layoutX="538.0" layoutY="13.0" prefHeight="41.0" prefWidth="291.0" text="Documentos y reportes">
-      <font>
-        <Font name="System Bold" size="26.0" />
-      </font>
-    </Label>
-    <Label fx:id="alumnoLB" layoutX="633.0" layoutY="178.0" text="" />
-    <TextField fx:id="matriculaTF" layoutX="69.0" layoutY="106.0" prefWidth="200.0" promptText="matrícula" text="" />
-    <Button fx:id="buscarBT" layoutX="301.0" layoutY="106.0" mnemonicParsing="false" text="Buscar" />
-    <Label fx:id="matriculaLB" layoutX="795.0" layoutY="178.0" prefWidth="87.0" text="" />
-    <Label id="matriculaLB" layoutX="144.0" layoutY="271.0" prefWidth="87.0" text="Documentos" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="363.0" prefWidth="87.0" text="Horario:" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="422.0" prefWidth="140.0" text="Carta de presentación:" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="477.0" prefHeight="18.0" prefWidth="122.0" text="Carta de aceptación:" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="535.0" prefWidth="157.0" text="Plan de actividades:" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="589.0" prefWidth="122.0" text="Carta de liberación:" />
-    <Label id="matriculaLB" layoutX="156.0" layoutY="644.0" prefWidth="87.0" text="Reporte final:" />
-    <Button fx:id="subirHorarioBT" layoutX="334.0" layoutY="363.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarHorarioBT" layoutX="408.0" layoutY="363.0" mnemonicParsing="false" text="Modificar" />
-    <Button fx:id="subirCartaPresentacionBT" layoutX="334.0" layoutY="423.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarCartaPresentacionBT" layoutX="408.0" layoutY="423.0" mnemonicParsing="false" text="Modificar" />
-    <Button fx:id="subirCartaAceptacion" layoutX="334.0" layoutY="477.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarCartaAceptacionBT" layoutX="408.0" layoutY="477.0" mnemonicParsing="false" text="Modificar" />
-    <Button fx:id="subirPlanActividadesBT" layoutX="334.0" layoutY="538.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarPlanActividadesBT" layoutX="408.0" layoutY="538.0" mnemonicParsing="false" text="Modificar" />
-    <Button fx:id="subirCartaLiberacionBT" layoutX="334.0" layoutY="590.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarCartaLiberacionBT" layoutX="408.0" layoutY="590.0" mnemonicParsing="false" text="Modificar" />
-    <Button fx:id="subirReporteFinalBT" layoutX="334.0" layoutY="645.0" mnemonicParsing="false" text="Subir" />
-    <Button fx:id="modificarReporteFinalBT" layoutX="408.0" layoutY="645.0" mnemonicParsing="false" text="Modificar" />
-    <Label id="matriculaLB" layoutX="787.0" layoutY="268.0" prefWidth="87.0" text="Reportes" />
-    <TableView layoutX="785.0" layoutY="333.0" prefHeight="356.0" prefWidth="352.0001220703125">
-      <columns>
-        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="231.0" text="Reporte" />
-      </columns>
-    </TableView>
-    <Button layoutX="817.0" layoutY="705.0" mnemonicParsing="false" text="Subir" />
-    <Button layoutX="1041.0" layoutY="705.0" mnemonicParsing="false" text="Modificar" />
-    <MenuBar layoutX="21.0" layoutY="22.0">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="0.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="1350.0" />
+    <MenuBar fx:id="menuMB" layoutX="10.0" layoutY="33.0">
       <menus>
         <Menu mnemonicParsing="false" text="Menú">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#irAProyectos" text="Proyectos" />
-            <MenuItem mnemonicParsing="false" onAction="#irADocumentos" text="Documentos" />
+            <MenuItem mnemonicParsing="false" text="Documentos" />
+            <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
+    <Label layoutX="502.0" layoutY="30.0" text="Documentos y Reportes">
+      <font>
+        <Font name="Arial Bold" size="30.0" />
+      </font>
+    </Label>
+    <TextField fx:id="matriculaTF" layoutX="450.0" layoutY="100.0" prefHeight="25.0" prefWidth="300.0" promptText="Matrícula" text="" />
+    <Button fx:id="buscarBT" layoutX="800.0" layoutY="100.0" mnemonicParsing="false" text="Buscar">
+      <font>
+        <Font name="Arial Bold" size="15.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Label fx:id="alumnoLB" font="$x1" layoutX="400.0" layoutY="175.0" text="" />
+    <Label fx:id="matriculaLB" font="$x1" layoutX="800.0" layoutY="175.0" text="" />
+    <Label layoutX="100.0" layoutY="250.0" text="Documentos">
+      <font>
+        <Font name="Arial Bold" size="20.0" fx:id="x3" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="150.0" layoutY="300.0" text="Horario:" />
+    <Button fx:id="subirHorarioBT" layoutX="350.0" layoutY="300.0" mnemonicParsing="false" onAction="#subirHorario" text="Subir">
+      <font>
+        <Font name="Arial Bold" size="12.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button fx:id="modificarHorarioBT" font="$x2" layoutX="450.0" layoutY="300.0" mnemonicParsing="false" onAction="#modificarHorario" text="Modificar" />
+    <Label font="$x1" layoutX="150.0" layoutY="354.0" text="Carta de Presentación:" />
+    <Button fx:id="subirCartaPresentacionBT" font="$x2" layoutX="350.0" layoutY="350.0" mnemonicParsing="false" onAction="#subirCartaPresentacion" text="Subir" />
+    <Button fx:id="modificarCartaPresentacionBT" font="$x2" layoutX="450.0" layoutY="350.0" mnemonicParsing="false" onAction="#modificarCartaPresentacion" text="Modificar" />
+    <Label font="$x1" layoutX="150.0" layoutY="400.0" text="Carta de Aceptación:" />
+    <Button id="subirCartaAceptacion" fx:id="subirCartaAceptacionBT" font="$x2" layoutX="350.0" layoutY="400.0" mnemonicParsing="false" onAction="#subirCartaAcpetacion" text="Subir" />
+    <Button fx:id="modificarCartaAceptacionBT" font="$x2" layoutX="450.0" layoutY="400.0" mnemonicParsing="false" onAction="#modificarCartaAceptacion" text="Modificar" />
+    <Label font="$x1" layoutX="150.0" layoutY="450.0" text="Plan de Actividades:" />
+    <Button fx:id="subirPlanActividadesBT" font="$x2" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" onAction="#subirPlanActividades" text="Subir" />
+    <Button fx:id="modificarPlanActividadesBT" font="$x2" layoutX="450.0" layoutY="450.0" mnemonicParsing="false" onAction="#modificarPlanActividades" text="Modificar" />
+    <Label font="$x1" layoutX="150.0" layoutY="500.0" text="Carta de Liberación:" />
+    <Button fx:id="subirCartaLiberacionBT" font="$x2" layoutX="350.0" layoutY="500.0" mnemonicParsing="false" onAction="#subirCartaLiberacion" text="Subir" />
+    <Button fx:id="modificarCartaLiberacionBT" font="$x2" layoutX="450.0" layoutY="500.0" mnemonicParsing="false" onAction="#modificarCartaLiberacion" text="Modificar" />
+    <Label font="$x1" layoutX="150.0" layoutY="550.0" text="Reporte final:" />
+    <Button fx:id="subirReporteFinalBT" font="$x2" layoutX="350.0" layoutY="550.0" mnemonicParsing="false" onAction="#subirReporteFinal" text="Subir" />
+    <Button fx:id="modificarReporteFinalBT" font="$x2" layoutX="450.0" layoutY="550.0" mnemonicParsing="false" onAction="#modificarReporteFinal" text="Modificar" />
+    <Label font="$x3" layoutX="675.0" layoutY="250.0" text="Reportes" />
+    <TableView fx:id="reporteTV" layoutX="725.0" layoutY="300.0" prefHeight="250.0" prefWidth="400.0">
+      <columns>
+        <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="400.0" text="Reporte" fx:id="nombreTC" />
+      </columns>
+    </TableView>
+    <Button fx:id="subirReporteBT" font="$x2" layoutX="850.0" layoutY="600.0" mnemonicParsing="false" onAction="#subirReporte" text="Subir" />
+    <Button fx:id="modificarReporteBT" font="$x2" layoutX="950.0" layoutY="600.0" mnemonicParsing="false" onAction="#modificarReporte" text="Modificar" />
   </children>
 </AnchorPane>

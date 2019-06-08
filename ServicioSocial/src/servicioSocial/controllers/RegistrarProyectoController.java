@@ -14,43 +14,43 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import servicioSocial.ServicioSocial;
 
 /**
  * FXML Controller class
  *
- * @author rockm
+ * @author Arturo
  */
 public class RegistrarProyectoController implements Initializable {
+  @FXML
+  private Button regresarBT;
+  @FXML
+  private TableView<?> dependenciasTV;
+  @FXML
+  private TableColumn<?, ?> nombreDependenciaTC;
+  @FXML
+  private Button registrarDependenciaBT;
+  private ServicioSocial servicioSocial;
 
-    @FXML
-    private TableView<?> dependenciasTV;
-    @FXML
-    private TableColumn<?, ?> nombreDependenciaTC;
-    @FXML
-    private Button registrarBT;
-    @FXML
-    private Button regresarBT;
+  public void setServicioSocial(ServicioSocial servicioSocial) {
+    this.servicioSocial = servicioSocial;
+  }
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    @FXML
-    public void clicItem(MouseEvent event){
-        if (event.getClickCount() == 2){
-            System.out.println("funciona");
-        }
-    }
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    // TODO
+  }  
 
-    @FXML
-    private void registrarDependencia(ActionEvent event) {
-    }
+  @FXML
+  private void regresar(ActionEvent event) {
+    servicioSocial.consultarProyectos();
+  }
 
-    @FXML
-    private void regresar(ActionEvent event) {
-    }
-    
+  @FXML
+  private void registrarDependencia(ActionEvent event) {
+    servicioSocial.registrarDependencia();
+  }
 }

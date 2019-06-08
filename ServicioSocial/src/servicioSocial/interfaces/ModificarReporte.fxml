@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.ModificarReporteController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="0.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="700.0" />
+    <Label layoutX="227.0" layoutY="30.0" text="Modificar reporte">
+      <font>
+        <Font name="Arial Bold" size="30.0" />
+      </font>
+    </Label>
+    <Label layoutX="200.0" layoutY="100.0" text="Mes:">
+      <font>
+        <Font name="Arial Bold" size="15.0" fx:id="x1" />
+      </font>
+    </Label>
+    <ComboBox fx:id="mesCB" layoutX="350.0" layoutY="100.0" prefHeight="21.0" prefWidth="197.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Label font="$x1" layoutX="200.0" layoutY="150.0" text="Horas realizadas:" />
+    <TextField fx:id="horasRealizadasTF" layoutX="350.0" layoutY="150.0" prefWidth="200.0" />
+    <Button id="aceptarBT" fx:id="subirArchivoBT" layoutX="295.0" layoutY="200.0" mnemonicParsing="false" onAction="#subirArchivo" text="Subir archivo">
+      <font>
+        <Font name="System Bold" size="18.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Label fx:id="archivoLB" font="$x1" layoutX="150.0" layoutY="250.0" text="" />
+    <Button fx:id="aceptarBT" font="$x2" layoutX="150.0" layoutY="350.0" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" />
+    <Button id="CancelarBT" fx:id="cancelarBT" font="$x2" layoutX="450.0" layoutY="350.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.ModificarDocumentoController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="0.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+    <Label layoutX="148.0" layoutY="30.0" text="Modificar documento">
+      <font>
+        <Font name="Arial Bold" size="30.0" />
+      </font>
+    </Label>
+    <Button id="aceptarBT" fx:id="subirArchivoBT" layoutX="220.0" layoutY="99.0" mnemonicParsing="false" onAction="#subirArchivo" text="Subir archivo">
+      <font>
+        <Font name="Arial Bold" size="20.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Label fx:id="archivoLB" layoutX="100.0" layoutY="150.0" text="">
+      <font>
+        <Font name="Arial Bold" size="15.0" />
+      </font>
+    </Label>
+    <Button fx:id="aceptarBT" font="$x1" layoutX="100.0" layoutY="225.0" mnemonicParsing="false" onAction="#aceptar" text="Aceptar" />
+    <Button id="CancelarBT" fx:id="cancelarBT" font="$x1" layoutX="400.0" layoutY="225.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+  </children>
+</AnchorPane>

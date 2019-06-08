@@ -18,77 +18,83 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
+import servicioSocial.ServicioSocial;
 
 /**
  * FXML Controller class
  *
- * @author rockm
+ * @author Arturo
  */
 public class RegistrarProyectoDatosController implements Initializable {
+  @FXML
+  private Button regresarBT;
+  @FXML
+  private Font x1;
+  @FXML
+  private Label nombreDependenciaLB;
+  @FXML
+  private TextField nombreProyectoTF;
+  @FXML
+  private TextArea descripcionTA;
+  @FXML
+  private TextArea actividadesTA;
+  @FXML
+  private TableView<?> horarioTV;
+  @FXML
+  private TableColumn<?, ?> lunesTC;
+  @FXML
+  private TableColumn<?, ?> martesTC;
+  @FXML
+  private TableColumn<?, ?> miercolesTC;
+  @FXML
+  private TableColumn<?, ?> juevesTC;
+  @FXML
+  private TableColumn<?, ?> viernesTC;
+  @FXML
+  private TableColumn<?, ?> sabadoTC;
+  @FXML
+  private TableColumn<?, ?> domingoTC;
+  @FXML
+  private TextField horarioTF;
+  @FXML
+  private ComboBox<?> diaCB;
+  @FXML
+  private TextField nombreJefeProyectoTF;
+  @FXML
+  private TextField cargoTF;
+  @FXML
+  private TextField correoElectronicoTF;
+  @FXML
+  private Button aceptarBT;
+  @FXML
+  private Font x2;
+  @FXML
+  private Button cancelarBT;
+  private ServicioSocial servicioSocial;
 
-    @FXML
-    private Label nombreDependenciaLB;
-    @FXML
-    private Font x1;
-    @FXML
-    private TextField nombreProyectoTF;
-    @FXML
-    private TextArea descripcionTA;
-    @FXML
-    private TextArea actividadesTA;
-    @FXML
-    private TableView<?> horarioTV;
-    @FXML
-    private TableColumn<?, ?> lunesTC;
-    @FXML
-    private TableColumn<?, ?> martesTC;
-    @FXML
-    private TableColumn<?, ?> miercolesTC;
-    @FXML
-    private TableColumn<?, ?> juevesTC;
-    @FXML
-    private TableColumn<?, ?> viernesTC;
-    @FXML
-    private TableColumn<?, ?> sabadoTC;
-    @FXML
-    private TableColumn<?, ?> domingoTC;
-    @FXML
-    private TextField horarioTF;
-    @FXML
-    private ComboBox<?> diaCB;
-    @FXML
-    private TextField nombreJefeProyectoTF;
-    @FXML
-    private TextField cargoTF;
-    @FXML
-    private TextField correoElectronicoTF;
-    @FXML
-    private Button aceptarBT;
-    @FXML
-    private Font x2;
-    @FXML
-    private Button cancelarBT;
-    @FXML
-    private Button regresarBT;
+  public void setServicioSocial(ServicioSocial servicioSocial) {
+    this.servicioSocial = servicioSocial;
+  }
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    // TODO
+  }  
 
-    @FXML
-    private void aceptar(ActionEvent event) {
-    }
+  @FXML
+  private void regresar(ActionEvent event) {
+    servicioSocial.registrarProyecto();
+  }
 
-    @FXML
-    private void cancelar(ActionEvent event) {
-    }
+  @FXML
+  private void aceptar(ActionEvent event) {
+  }
 
-    @FXML
-    private void regresar(ActionEvent event) {
-    }
-    
+  @FXML
+  private void cancelar(ActionEvent event) {
+    servicioSocial.registrarProyecto();
+  }
 }

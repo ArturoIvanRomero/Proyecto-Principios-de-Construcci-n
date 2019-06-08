@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="servicioSocial.controllers.LoginController">
+  <children>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="0.0" layoutY="0.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+    <Label layoutX="193.0" layoutY="15.0" text="Servicio Social">
+      <font>
+        <Font name="Arial Bold" size="30.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="36.0" layoutY="50.0" text="Facultad de Estadística e Informática" />
+    <ImageView fitHeight="200.87376403808594" fitWidth="199.90335413232603" layoutX="75.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../imagenes/logo.jpg" />
+      </image>
+    </ImageView>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ccd4ff" height="300.0" layoutX="350.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+    <Label layoutX="360.0" layoutY="150.0" text="Usuario:">
+      <font>
+        <Font name="Arial" size="15.0" fx:id="x2" />
+      </font>
+    </Label>
+    <TextField id="tfUsuario" fx:id="usuarioTF" layoutX="450.0" layoutY="150.0" prefWidth="140.0" />
+    <Label font="$x2" layoutX="360.0" layoutY="200.0" text="Contraseña:" />
+    <PasswordField id="pfContrasenia" fx:id="contraseniaPF" layoutX="450.0" layoutY="200.0" prefWidth="140.0" />
+    <Button id="btRegresar" fx:id="entrarBT" font="$x2" layoutX="440.0" layoutY="250.0" mnemonicParsing="false" onAction="#entrar" text="Entrar" />
+    <Label id="lbNota" fx:id="notaLB" font="$x2" layoutX="360.0" layoutY="300.0" text="" textFill="RED" />
+  </children>
+</AnchorPane>

@@ -8,7 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ServicioSocial.jar" size="18679" download="eager" />
+    <jar href="ServicioSocial.jar" size="48701" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.18-bin.jar" size="775587" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ServicioSocial" >
     <param name="requiredFXVersion" value="8.0+"/>

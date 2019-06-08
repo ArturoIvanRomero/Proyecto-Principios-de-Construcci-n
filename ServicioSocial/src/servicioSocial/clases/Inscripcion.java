@@ -1,17 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Descripción: Clase Inscripción.
+ * @autor Acevedo Suárez Josue Armando y Romero Peña Arturo Iván
+ * @version 1, 2019/06/07
  */
 package servicioSocial.clases;
 
-/**
- *
- * @author rockm
- */
+import javafx.beans.property.SimpleStringProperty;
+
 public class Inscripcion {
-    private int numInscripcion;
-    private String estado;
-    private int horasRealizadas;
-    
+  private int idInscripcion;
+  private int numInscripcion;
+  private SimpleStringProperty estado = new SimpleStringProperty();
+  private int horasRealizadas;
+  private SimpleStringProperty matricula = new SimpleStringProperty();
+  private int idExperienciaEducativa;
+  private int idPlanActividades;
+
+  public Inscripcion(int idInscripcion, int numInscripcion, String estado, int horasRealizadas, 
+          String matricula, int idExperienciaEducativa, int idPlanActividades) {
+    this.idInscripcion = idInscripcion;
+    this.matricula.set(matricula);
+    this.idExperienciaEducativa = idExperienciaEducativa;
+    this.numInscripcion = numInscripcion;
+    this.estado.set(estado);
+    this.horasRealizadas = horasRealizadas;
+    this.idPlanActividades = idPlanActividades;
+  }
+  
+  public Inscripcion(int idInscripcion, int numInscripcion, String estado, int horasRealizadas, 
+          String matricula, int idExperienciaEducativa) {
+    this.idInscripcion = idInscripcion;
+    this.matricula.set(matricula);
+    this.idExperienciaEducativa = idExperienciaEducativa;
+    this.numInscripcion = numInscripcion;
+    this.estado.set(estado);
+    this.horasRealizadas = horasRealizadas;
+  }
+
+  public int getIdInscripcion() {
+    return idInscripcion;
+  }
 }

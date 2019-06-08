@@ -15,49 +15,50 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author rockm
+ * @author Arturo
  */
 public class SubirReporteController implements Initializable {
+  @FXML
+  private Font x2;
+  @FXML
+  private ComboBox<?> mesCB;
+  @FXML
+  private TextField horasRealizadasTF;
+  @FXML
+  private Button subirArchivoBT;
+  @FXML
+  private Font x1;
+  @FXML
+  private Label archivoLB;
+  @FXML
+  private Button aceptarBT;
+  @FXML
+  private Button cancelarBT;
 
-    @FXML
-    private Button aceptarBT;
-    @FXML
-    private Font x1;
-    @FXML
-    private Button cancelarBT;
-    @FXML
-    private Button subirArchivoBT;
-    @FXML
-    private Label archivoLB;
-    @FXML
-    private Font x2;
-    @FXML
-    private ComboBox<?> mesCB;
-    @FXML
-    private TextField horasRealizadasTF;
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    // TODO
+  }  
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+  @FXML
+  private void subirArchivo(ActionEvent event) {
+  }
 
-    @FXML
-    private void aceptar(ActionEvent event) {
-    }
+  @FXML
+  private void aceptar(ActionEvent event) {
+  }
 
-    @FXML
-    private void cancelar(ActionEvent event) {
-    }
-
-    @FXML
-    private void subirArchivo(ActionEvent event) {
-    }
-    
+  @FXML
+  private void cancelar(ActionEvent event) {
+    Stage stage = (Stage) cancelarBT.getScene().getWindow();
+    stage.close();
+  }
 }
