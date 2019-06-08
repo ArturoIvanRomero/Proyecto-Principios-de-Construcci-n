@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
       }
     } else{
       contraseniaPF.setText("");
-      notaLB.setText("Usuario o contraseña incorrectos");
+      notaLB.setText("El nombre de usuario o contraseña son incorrectos");
     }
   }
 }
