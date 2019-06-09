@@ -83,8 +83,8 @@ DROP TABLE IF EXISTS `documentoalumno`;
 CREATE TABLE `documentoalumno` (
   `idDocumentoAlumno` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
-  `tipo` varchar(20) NOT NULL,
-  `ruta` varchar(200) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `rutaArchivo` varchar(200) NOT NULL,
   `idInscripcion` int(11) NOT NULL,
   PRIMARY KEY (`idDocumentoAlumno`),
   UNIQUE KEY `iddocumentoAlumno_UNIQUE` (`idDocumentoAlumno`),
@@ -112,8 +112,8 @@ DROP TABLE IF EXISTS `documentoserviciosocial`;
 CREATE TABLE `documentoserviciosocial` (
   `idDocumentoServicioSocial` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
-  `tipo` varchar(20) NOT NULL,
-  `ruta` varchar(200) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `rutaArchivo` varchar(200) NOT NULL,
   `estado` varchar(10) NOT NULL,
   `idInscripcion` int(11) NOT NULL,
   PRIMARY KEY (`idDocumentoServicioSocial`),
@@ -200,7 +200,7 @@ CREATE TABLE `inscripcion` (
   `idInscripcion` int(11) NOT NULL AUTO_INCREMENT,
   `numInscripcion` int(11) NOT NULL,
   `estado` varchar(9) NOT NULL,
-  `horasRealizado` int(11) NOT NULL,
+  `horasRealizadas` int(11) NOT NULL,
   `matricula` varchar(9) NOT NULL,
   `idExperienciaEducativa` int(11) NOT NULL,
   `idPlanActividades` int(11) DEFAULT NULL,
@@ -209,9 +209,9 @@ CREATE TABLE `inscripcion` (
   KEY `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1_idx` (`idExperienciaEducativa`),
   KEY `fk_Alumno_has_ExperienciaEducativa_Alumno1_idx` (`matricula`),
   KEY `fkidPlanActividades_idx` (`idPlanActividades`),
-  CONSTRAINT `restPlanActividadesInscripcion` FOREIGN KEY (`idPlanActividades`) REFERENCES `planactividades` (`idPlanActividades`),
   CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_Alumno1` FOREIGN KEY (`matricula`) REFERENCES `alumno` (`matricula`),
-  CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1` FOREIGN KEY (`idExperienciaEducativa`) REFERENCES `experienciaeducativa` (`idExperienciaEducativa`)
+  CONSTRAINT `fk_Alumno_has_ExperienciaEducativa_ExperienciaEducativa1` FOREIGN KEY (`idExperienciaEducativa`) REFERENCES `experienciaeducativa` (`idExperienciaEducativa`),
+  CONSTRAINT `restPlanActividadesInscripcion` FOREIGN KEY (`idPlanActividades`) REFERENCES `planactividades` (`idPlanActividades`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -268,8 +268,8 @@ DROP TABLE IF EXISTS `reporte`;
 CREATE TABLE `reporte` (
   `idReporte` int(11) NOT NULL AUTO_INCREMENT,
   `nombreArchivo` varchar(50) NOT NULL,
-  `tipo` varchar(20) NOT NULL,
-  `ruta` varchar(200) NOT NULL,
+  `tipo` varchar(30) NOT NULL,
+  `rutaArchivo` varchar(200) NOT NULL,
   `estado` varchar(10) NOT NULL,
   `horasRealizadas` int(11) NOT NULL,
   `mes` varchar(10) NOT NULL,
@@ -351,4 +351,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-07 16:05:54
+-- Dump completed on 2019-06-09 18:05:02
